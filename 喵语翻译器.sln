@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "喵语翻译器Cli", "喵语翻译器\喵语翻译器Cli.csproj", "{2062D2D9-9378-4246-B7FC-5D83DE14FB6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "喵语翻译器Cli", "喵语翻译器Cli\喵语翻译器Cli.csproj", "{2062D2D9-9378-4246-B7FC-5D83DE14FB6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "喵", "喵\喵.csproj", "{318B3A54-65EA-4ED2-A39C-AB6622362615}"
 EndProject
