@@ -30,7 +30,7 @@ namespace 喵语翻译器
             喵 = 喵.TrimStart('0');
             return 喵喵喵(喵);
         }
-        public static string 喵喵喵(string cat)
+        internal static string 喵喵喵(string cat)
         {
             cat = cat.PadLeft(8 * (int)Math.Ceiling((double)cat.Length / 8), '0');
             List<byte> 所有的喵喵 = new List<byte>();
@@ -40,7 +40,7 @@ namespace 喵语翻译器
             }
             return Encoding.UTF8.GetString(所有的喵喵.ToArray());
         }
-        public static string 变成喵(string cat)
+        internal static string 变成喵(string cat)
         {
             string 喵 = "";
             for (int 喵喵的位置 = 0; 喵喵的位置 < cat.Length; 喵喵的位置 += 3)
