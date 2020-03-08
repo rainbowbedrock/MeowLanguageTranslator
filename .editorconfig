@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS8002: 引用程序集“Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null”没有强名称。
+dotnet_diagnostic.CS8002.severity = none

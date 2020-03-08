@@ -8,11 +8,18 @@
 
     <StackLayout Margin="25,25,25,25">
         <!-- Place new controls here -->
-        <Label Text="喵语翻译器" 
-               HorizontalOptions="Center"/>
-        <Editor x:Name="sometext"
-                HeightRequest="200"
-                Placeholder="这里输入普通的文字"/>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="FillAndExpand">
+            <Editor x:Name="sometext"
+                    MinimumHeightRequest="200"
+                    Placeholder="这里输入普通的文字"
+                    HorizontalOptions="FillAndExpand"/>
+            <StackLayout HorizontalOptions="End">
+                <Button Text="复制字" Clicked="复制字" />
+                <Button Text="粘贴字" Clicked="粘贴字" />
+            </StackLayout>
+        </StackLayout>
+        
         <StackLayout Orientation="Horizontal"
                      HorizontalOptions="Center">
             <Button Text="变成喵"
@@ -20,9 +27,23 @@
             <Button Text="变成字"
                     Clicked="变成字"/>
         </StackLayout>
-        <Editor x:Name="meow"
-                HeightRequest="200"
-                Placeholder="喵喵喵喵喵喵喵"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Editor x:Name="meow"
+                    MinimumHeightRequest="100"
+                    Placeholder="喵喵喵喵喵喵喵"
+                    HorizontalOptions="FillAndExpand"/>
+            <StackLayout HorizontalOptions="End">
+                <Button Text="复制喵" Clicked="复制喵" />
+                <Button Text="粘贴喵" Clicked="粘贴喵" />
+            </StackLayout>
+        </StackLayout>
+        <Label Text="喵语翻译器 by 坊洛酱" 
+               HorizontalOptions="Center"
+                VerticalOptions="End"/>
+        <Button Text="关于"
+                Clicked="关于"
+                VerticalOptions="End"/>
     </StackLayout>
 
 </ContentPage>

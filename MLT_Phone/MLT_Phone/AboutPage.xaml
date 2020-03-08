@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MLT_Phone.AboutPage">
+    <ContentPage.Content>
+        <StackLayout Padding="25,25,25,25">
+            <Label Text="喵语翻译器"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="Title"/>
+            <Label Text="这是一个没什么卵用的应用"/>
+            <Label Text="它可以将一段文字变成一堆喵"/>
+            <Label Text="当然也可以把喵翻译回来"/>
+            <Label Text="By 坊洛酱" HorizontalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

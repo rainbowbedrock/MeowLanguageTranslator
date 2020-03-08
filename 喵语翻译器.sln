@@ -5,6 +5,7 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C7A67847-DA0D-460A-959D-2C066D78993C}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
@@ -18,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLT_Phone.Android", "MLT_Ph
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLT_Phone.iOS", "MLT_Phone\MLT_Phone.iOS\MLT_Phone.iOS.csproj", "{0C8A9C5F-CAE1-42CD-9A5C-473D3E907268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLT_Phone", "MLT_Phone\MLT_Phone\MLT_Phone.csproj", "{8374FEC4-66A9-47D5-AE8C-6474435FDA89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLT_Phone", "MLT_Phone\MLT_Phone\MLT_Phone.csproj", "{8374FEC4-66A9-47D5-AE8C-6474435FDA89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
