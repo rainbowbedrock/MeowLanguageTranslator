@@ -56,6 +56,9 @@
     <AndroidSigningStorePass>Guest314.</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>meow</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>Guest314.</AndroidSigningKeyPass>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <MandroidI18n />
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
