@@ -12,25 +12,33 @@ namespace 喵语翻译器
         {
 
             var 喵喵们 = Encoding.UTF8.GetBytes(cat);
+            bool 压缩喵喵 = 喵喵们.Length > 100;
+            if (压缩喵喵)
+                喵喵们 = 喵变小(喵喵们);
+            
             string 喵 = "";
             foreach (byte 一只喵 in 喵喵们)
                 喵 += Convert.ToString(一只喵, 2).PadLeft(8, '0');
-            if (喵.Length % 3 == 1) 喵 = "00" + 喵;
-            else if (喵.Length % 3 == 2) 喵 = "0" + 喵;
-            return 变成喵(喵);
+            string 喵喵 = 变成喵(喵);
+            if (压缩喵喵)
+                return "喵！" + 喵喵;
+            else return "喵？" + 喵喵;
         }
         public static string 喵喵Decode(string cat)
         {
             string 喵 = "", 小喵 = "";
+            if (!(cat.StartsWith("喵！") || cat.StartsWith("喵？")))
+                throw new Exception();
+            bool 压缩喵喵 = cat.StartsWith("喵！");
+            cat = cat.Substring(2);
             foreach(char 一只喵 in cat)
             {
                 小喵 += 一只喵;
-                if (一只喵 == '！'|| 一只喵 == '？'|| 一只喵 == '～') { 喵 += 喵喵表[小喵]; 小喵 = ""; }
+                if (一只喵 == '！'|| 一只喵 == '？'|| 一只喵 == '～'|| 一只喵=='。') { 喵 += 喵喵表.Forward[小喵]; 小喵 = ""; }
             }
-            喵 = 喵.TrimStart('0');
-            return 喵喵喵(喵);
+            return 喵喵喵(喵, 压缩喵喵);
         }
-        internal static string 喵喵喵(string cat)
+        internal static string 喵喵喵(string cat,bool 压缩喵喵)
         {
             cat = cat.PadLeft(8 * (int)Math.Ceiling((double)cat.Length / 8), '0');
             List<byte> 所有的喵喵 = new List<byte>();
@@ -38,14 +46,18 @@ namespace 喵语翻译器
             {
                 所有的喵喵.Add(Convert.ToByte(cat.Substring(喵喵的位置, 8), 2));
             }
-            return Encoding.UTF8.GetString(所有的喵喵.ToArray());
+            byte[] 最后的喵;
+            if (压缩喵喵)
+                最后的喵 = 喵变大(所有的喵喵.ToArray());
+            else 最后的喵 = 所有的喵喵.ToArray();
+            return Encoding.UTF8.GetString(最后的喵);
         }
         internal static string 变成喵(string cat)
         {
             string 喵 = "";
-            for (int 喵喵的位置 = 0; 喵喵的位置 < cat.Length; 喵喵的位置 += 3)
+            for (int 喵喵的位置 = 0; 喵喵的位置 < cat.Length; 喵喵的位置 += 4)
             {
-                喵 += 喵喵表[cat.Substring(喵喵的位置, 3)];
+                喵 += 喵喵表.Reverse[cat.Substring(喵喵的位置, 4)];
                 
             }
             return 喵;
@@ -100,26 +112,25 @@ namespace 喵语翻译器
                 throw new Exception(e.Message);
             }
         }
-        internal static Dictionary<string, string> 喵喵表 = new Dictionary<string, string>()
+        internal static Map<string, string> 喵喵表 = new Map<string, string>()
         {
-            {"喵！","000" },
-            {"喵？","001" },
-            {"喵～","010" },
-            {"喵喵！","011" },
-            {"喵喵？","100" },
-            {"喵喵～","101" },
-            {"喵喵喵～","110" },
-            {"喵喵喵！","111" },
-            {"000","喵！" },
-            {"001","喵？" },
-            {"010","喵～" },
-            {"011","喵喵！" },
-            {"100","喵喵？" },
-            {"101","喵喵～" },
-            {"110","喵喵喵～" },
-            {"111","喵喵喵！" }
+            {"喵喵喵喵！","0000" },
+            {"喵喵喵喵？","0001" },
+            {"喵喵喵喵～","0010" },
+            {"喵喵喵喵。","0011" },
+            {"喵喵喵？","0100" },
+            {"喵喵喵～","0101" },
+            {"喵喵喵！","0110" },
+            {"喵喵喵。","0111" },
+            {"喵喵！","1000" },
+            {"喵喵？","1001" },
+            {"喵喵～","1010" },
+            {"喵喵。","1011" },
+            {"喵？","1100" },
+            {"喵～","1101" },
+            {"喵！","1110" },
+            {"喵。","1111" },
         };
-
         
     }
 

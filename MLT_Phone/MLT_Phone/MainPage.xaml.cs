@@ -58,7 +58,7 @@ namespace MLT_Phone
 
         private void 关于(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AboutPage()).Wait();
+            Navigation.PushAsync(new AboutPage());
         }
     }
 }
