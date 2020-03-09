@@ -6,12 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C7A67847-DA0D-460A-959D-2C066D78993C}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "喵语翻译器Cli", "喵语翻译器Cli\喵语翻译器Cli.csproj", "{E6988271-F711-4266-A9AE-3988E5A1C7FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "喵", "喵\喵.csproj", "{D9F2D705-BDD8-474A-80BA-76CC49B6DFDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "喵语翻译器", "喵\喵语翻译器.csproj", "{D9F2D705-BDD8-474A-80BA-76CC49B6DFDC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLT_Phone.UWP", "MLT_Phone\MLT_Phone.UWP\MLT_Phone.UWP.csproj", "{AC9E9AE8-6E80-428D-84B4-1D5104240E6C}"
 EndProject

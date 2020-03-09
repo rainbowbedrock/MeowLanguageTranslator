@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\喵\喵.csproj" />
+    <None Remove=".DS_Store" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove=".DS_Store" />
+    <ProjectReference Include="..\喵\喵语翻译器.csproj" />
   </ItemGroup>
 </Project>

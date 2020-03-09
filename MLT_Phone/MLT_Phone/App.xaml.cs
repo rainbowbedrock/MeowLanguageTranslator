@@ -11,7 +11,6 @@ namespace MLT_Phone
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
-            MainPage.Title = "喵语翻译器";
         }
 
         protected override void OnStart()
