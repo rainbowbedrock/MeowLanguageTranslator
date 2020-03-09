@@ -21,6 +21,8 @@ namespace MLT_Phone
             Title = "喵语翻译器";
             sometext.Text = "";
             meow.Text = "";
+            string cb= Clipboard.GetTextAsync().Result;
+            if (cb.StartsWith("喵")) meow.Text = cb;
         }
 
         private void 变成喵(object sender, EventArgs e)
