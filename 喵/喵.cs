@@ -11,7 +11,7 @@ namespace 喵语翻译器
         public static string 喵喵Encode(string cat)
         {
 
-            var 喵喵们 = Encoding.UTF8.GetBytes(cat);
+            var 喵喵们 = Encoding.Unicode.GetBytes(cat);
             bool 压缩喵喵 = 喵喵们.Length > 100;
             if (压缩喵喵)
                 喵喵们 = 喵变小(喵喵们);
@@ -50,7 +50,7 @@ namespace 喵语翻译器
             if (压缩喵喵)
                 最后的喵 = 喵变大(所有的喵喵.ToArray());
             else 最后的喵 = 所有的喵喵.ToArray();
-            return Encoding.UTF8.GetString(最后的喵);
+            return Encoding.Unicode.GetString(最后的喵);
         }
         internal static string 变成喵(string cat)
         {
