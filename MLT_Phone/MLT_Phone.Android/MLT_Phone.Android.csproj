@@ -32,10 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <BundleAssemblies>false</BundleAssemblies>
     <AndroidKeyStore>false</AndroidKeyStore>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -47,10 +43,6 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <BundleAssemblies>false</BundleAssemblies>
     <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidSigningKeyStore>C:\Users\rainb\Documents\坊洛酱的签名.jks</AndroidSigningKeyStore>
     <AndroidSigningStorePass>Guest314.</AndroidSigningStorePass>
@@ -106,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MLT_Phone\MLT_Phone.csproj">
-      <Project>{981F5A98-4D3E-436D-AFF2-A4AC9AD610DB}</Project>
+      <Project>{8374FEC4-66A9-47D5-AE8C-6474435FDA89}</Project>
       <Name>MLT_Phone</Name>
     </ProjectReference>
   </ItemGroup>
