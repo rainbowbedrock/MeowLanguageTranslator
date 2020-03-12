@@ -12,37 +12,40 @@ namespace 喵语翻译器
         {
 
             var 喵喵们 = Encoding.Unicode.GetBytes(cat);
-            bool 压缩喵喵 = 喵喵们.Length > 100;
+            bool 压缩喵喵 = 喵喵们.Length >50;
             if (压缩喵喵)
                 喵喵们 = 喵变小(喵喵们);
             
             string 喵 = "";
             foreach (byte 一只喵 in 喵喵们)
                 喵 += Convert.ToString(一只喵, 2).PadLeft(8, '0');
-            string 喵喵 = 变成喵(喵);
+
+            string 喵喵 = 变成喵(喵.TrimStart('0'));
+
             if (压缩喵喵)
-                return "喵！" + 喵喵;
-            else return "喵？" + 喵喵;
+                return 喵喵 + "Σ(っ°Д°;)っ";
+            else return 喵喵 + "_(:з」∠)_";
         }
         public static string 喵喵Decode(string cat)
         {
             string 喵 = "", 小喵 = "";
-            if (!(cat.StartsWith("喵！") || cat.StartsWith("喵？")))
+            if (!(cat.EndsWith("_(:з」∠)_") || cat.EndsWith("Σ(っ°Д°;)っ")))
                 throw new Exception();
-            bool 压缩喵喵 = cat.StartsWith("喵！");
-            cat = cat.Substring(2);
+            bool 压缩喵喵 = cat.EndsWith("Σ(っ°Д°;)っ");
             foreach(char 一只喵 in cat)
             {
                 小喵 += 一只喵;
-                if (一只喵 == '！'|| 一只喵 == '？'|| 一只喵 == '～'|| 一只喵=='。') { 喵 += 喵喵表.Forward[小喵]; 小喵 = ""; }
+                if (一只喵 == '！'|| 一只喵 == '？'|| 一只喵 == '～'|| 一只喵=='。' || 一只喵 == '!' || 一只喵 == '?' || 一只喵 == '~' || 一只喵 == '.') { 喵 += 喵喵表.Forward[小喵]; 小喵 = ""; }
             }
             return 喵喵喵(喵, 压缩喵喵);
         }
         internal static string 喵喵喵(string cat,bool 压缩喵喵)
         {
+            cat = cat.TrimStart('0');
             cat = cat.PadLeft(8 * (int)Math.Ceiling((double)cat.Length / 8), '0');
+
             List<byte> 所有的喵喵 = new List<byte>();
-            for(int 喵喵的位置=0; 喵喵的位置<cat.Length; 喵喵的位置 += 8)
+            for (int 喵喵的位置=0; 喵喵的位置<cat.Length; 喵喵的位置 += 8)
             {
                 所有的喵喵.Add(Convert.ToByte(cat.Substring(喵喵的位置, 8), 2));
             }
@@ -50,14 +53,18 @@ namespace 喵语翻译器
             if (压缩喵喵)
                 最后的喵 = 喵变大(所有的喵喵.ToArray());
             else 最后的喵 = 所有的喵喵.ToArray();
+
             return Encoding.Unicode.GetString(最后的喵);
         }
         internal static string 变成喵(string cat)
         {
+
+            cat = cat.PadLeft(喵喵的长度 * (int)Math.Ceiling((double)cat.Length / 喵喵的长度), '0');
+
             string 喵 = "";
-            for (int 喵喵的位置 = 0; 喵喵的位置 < cat.Length; 喵喵的位置 += 4)
+            for (int 喵喵的位置 = 0; 喵喵的位置 < cat.Length; 喵喵的位置 += 喵喵的长度)
             {
-                喵 += 喵喵表.Reverse[cat.Substring(喵喵的位置, 4)];
+                喵 += 喵喵表.Reverse[cat.Substring(喵喵的位置, 喵喵的长度)];
                 
             }
             return 喵;
@@ -112,24 +119,42 @@ namespace 喵语翻译器
                 throw new Exception(e.Message);
             }
         }
+        private const int 喵喵的长度 = 5;
         internal static Map<string, string> 喵喵表 = new Map<string, string>()
         {
-            {"喵喵喵喵！","0000" },
-            {"喵喵喵喵？","0001" },
-            {"喵喵喵喵～","0010" },
-            {"喵喵喵喵。","0011" },
-            {"喵喵喵？","0100" },
-            {"喵喵喵～","0101" },
-            {"喵喵喵！","0110" },
-            {"喵喵喵。","0111" },
-            {"喵喵！","1000" },
-            {"喵喵？","1001" },
-            {"喵喵～","1010" },
-            {"喵喵。","1011" },
-            {"喵？","1100" },
-            {"喵～","1101" },
-            {"喵！","1110" },
-            {"喵。","1111" },
+            {"!","00000" },
+            {"?","00001" },
+            {"~","00010" },
+            {".","00011" },
+            {"nia?","00100" },
+            {"nia~","00101" },
+            {"nia!","00110" },
+            {"nia.","00111" },
+            {"！","01000" },
+            {"？","01001" },
+            {"～","01010" },
+            {"。","01011" },
+            {"nia？","01100" },
+            {"nia～","01101" },
+            {"nia！","01110" },
+            {"nia。","01111" },
+
+            {"喵!","10000" },
+            {"喵?","10001" },
+            {"喵~","10010" },
+            {"喵.","10011" },
+            {"喵呜?","10100" },
+            {"喵呜~","10101" },
+            {"喵呜!","10110" },
+            {"喵呜.","10111" },
+            {"喵！","11000" },
+            {"喵？","11001" },
+            {"喵～","11010" },
+            {"喵。","11011" },
+            {"喵呜？","11100" },
+            {"喵呜～","11101" },
+            {"喵呜！","11110" },
+            {"喵呜。","11111" },
         };
         
     }
