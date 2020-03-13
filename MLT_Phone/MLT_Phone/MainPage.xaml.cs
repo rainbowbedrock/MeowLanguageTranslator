@@ -44,10 +44,12 @@ namespace MLT_Phone
         private void 复制字(object sender, EventArgs e)
         {
             Clipboard.SetTextAsync(sometext.Text);
+            DisplayAlert("复制字", "复制好啦喵", @"~\(≧▽≦)/~");
         }
         private void 复制喵(object sender, EventArgs e)
         {
             Clipboard.SetTextAsync(meow.Text);
+            DisplayAlert("复制喵", "复制好啦喵", @"~\(≧▽≦)/~");
         }
         private void 粘贴字(object sender, EventArgs e)
         {

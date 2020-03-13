@@ -11,6 +11,7 @@
         <StackLayout Orientation="Horizontal"
                      VerticalOptions="FillAndExpand">
             <Editor x:Name="sometext"
+                    IsSpellCheckEnabled="False"
                     MinimumHeightRequest="200"
                     Placeholder="这里输入普通的文字"
                     HorizontalOptions="FillAndExpand"/>
@@ -32,6 +33,7 @@
             <Editor x:Name="meow"
                     MinimumHeightRequest="100"
                     Placeholder="喵喵喵喵喵喵喵"
+                    IsSpellCheckEnabled="False"
                     HorizontalOptions="FillAndExpand"/>
             <StackLayout HorizontalOptions="End">
                 <Button Text="复制喵" Clicked="复制喵" />
