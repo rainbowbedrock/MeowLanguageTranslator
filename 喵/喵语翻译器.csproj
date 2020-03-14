@@ -7,8 +7,4 @@
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="ZstdNet2" Version="1.3.5" />
-  </ItemGroup>
 </Project>

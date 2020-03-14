@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace 喵语翻译器Windows.Properties
+namespace MLT_Phone.WPF.Properties
 {
 
 
