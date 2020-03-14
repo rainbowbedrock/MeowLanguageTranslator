@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using 喵语翻译器;
-using Xamarin.Essentials;
 
 namespace MLT_Phone
 {
@@ -15,22 +14,26 @@ namespace MLT_Phone
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        internal IClipboard MyClipboard;
         public MainPage()
         {
             InitializeComponent();
             Title = "喵语翻译器";
             sometext.Text = "";
             meow.Text = "";
-            //string cb= Clipboard.GetTextAsync().Result;
-            //if (cb.StartsWith("喵")) meow.Text = cb;
+            if (Device.RuntimePlatform == Device.WPF)
+                MyClipboard = DependencyService.Get<IClipboard>();
+            else MyClipboard = new Clipboard();
         }
 
         private void 变成喵(object sender, EventArgs e)
         {
-                meow.Text = 喵.喵喵Encode(sometext.Text);
+            if (sometext.Text == "") sometext.Text = "你要先打一些字喵(￣y▽,￣)╭ ";
+            meow.Text = 喵.喵喵Encode(sometext.Text);
         }
         private void 变成字(object sender, EventArgs e)
         {
+            if (meow.Text == "") meow.Text = "?喵!nia?喵呜。!nia？？？?！喵呜~nia!喵！喵!!？喵～nia～喵呜?喵呜？喵呜~喵～喵。喵呜!喵呜~～喵~喵!!nia..喵呜。喵呜～喵呜？喵!?nia。？nia~nia~喵!!nia！nia.喵呜。喵？？!?喵呜!喵~～！!!_(:з」∠)_";
             try
             {
                 sometext.Text = 喵.喵喵Decode(meow.Text);
@@ -41,28 +44,40 @@ namespace MLT_Phone
             }
         }
 
+        
+
         private void 复制字(object sender, EventArgs e)
         {
-            Clipboard.SetTextAsync(sometext.Text);
+            MyClipboard.SetText(sometext.Text);
             DisplayAlert("复制字", "复制好啦喵", @"~\(≧▽≦)/~");
         }
         private void 复制喵(object sender, EventArgs e)
         {
-            Clipboard.SetTextAsync(meow.Text);
+            MyClipboard.SetText(meow.Text);
             DisplayAlert("复制喵", "复制好啦喵", @"~\(≧▽≦)/~");
         }
         private void 粘贴字(object sender, EventArgs e)
         {
-            sometext.Text = Clipboard.GetTextAsync().Result;
+            sometext.Text = MyClipboard.GetText();
         }
         private void 粘贴喵(object sender, EventArgs e)
         {
-            meow.Text = Clipboard.GetTextAsync().Result;
+            meow.Text = MyClipboard.GetText();
         }
 
         private void 关于(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AboutPage());
         }
+    }
+    public class Clipboard : IClipboard
+    {
+        public string GetText() => Xamarin.Essentials.Clipboard.GetTextAsync().Result;
+        public void SetText(string text) => Xamarin.Essentials.Clipboard.SetTextAsync(text).Wait();
+    }
+    public interface IClipboard
+    {
+        string GetText();
+        void SetText(string text);
     }
 }
