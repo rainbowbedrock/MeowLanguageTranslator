@@ -34,10 +34,13 @@
 	<string>MLT_Phone</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+<<<<<<< HEAD
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 	</dict>
+=======
+>>>>>>> 502100a1333d05bf59a1085c766d5b00834cfbff
 </dict>
 </plist>
