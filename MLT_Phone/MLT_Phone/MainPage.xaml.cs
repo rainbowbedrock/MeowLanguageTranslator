@@ -28,12 +28,17 @@ namespace MLT_Phone
 
         private void 变成喵(object sender, EventArgs e)
         {
-            if (sometext.Text == "") sometext.Text = "你要先打一些字喵(￣y▽,￣)╭ ";
+            if (sometext.Text == "")
+            {
+                DisplayAlert("喵", "你要先输入一些字喵(｡･ω･｡)", "喵");
+                return;
+            }
             meow.Text = 喵.喵喵Encode(sometext.Text);
         }
 
         private void 喵喵套娃(object sender, EventArgs e)
         {
+            DisplayPromptAsync("喵喵套娃", "你想要套多少呢", "开始套娃", "不要", "套娃最小长度", 4, Keyboard.Numeric, "1000");
             string cat= 喵.喵喵Encode(sometext.Text);
             while (cat.Length < 1000)
             {
@@ -44,7 +49,11 @@ namespace MLT_Phone
 
         private void 变成字(object sender, EventArgs e)
         {
-            if (meow.Text == "") meow.Text = "?喵!nia?喵呜。!nia？？？?！喵呜~nia!喵！喵!!？喵～nia～喵呜?喵呜？喵呜~喵～喵。喵呜!喵呜~～喵~喵!!nia..喵呜。喵呜～喵呜？喵!?nia。？nia~nia~喵!!nia！nia.喵呜。喵？？!?喵呜!喵~～！!!_(:з」∠)_";
+            if (sometext.Text == "")
+            {
+                DisplayAlert("喵", "你要先输入一些字喵(｡･ω･｡)", "喵");
+                return;
+            }
             try
             {
                 sometext.Text = 喵.喵喵Decode(meow.Text);
