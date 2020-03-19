@@ -48,10 +48,14 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>Apple Development: rainbowbedrock@outlook.com (HFV347A8YS)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchInterpreter>-all</MtouchInterpreter>
     <MtouchSdkVersion>13.2</MtouchSdkVersion>
+    <CodesignProvision>iOS Team Provisioning Profile: win.guest314.application</CodesignProvision>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>

@@ -27,8 +27,12 @@
             <Button Text="变成喵"
                     Clicked="变成喵"
                     />
+            <Button Text="变成套娃喵"
+                    Clicked="喵喵套娃"
+                    />
             <Button Text="变成字"
                     Clicked="变成字"/>
+            
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">

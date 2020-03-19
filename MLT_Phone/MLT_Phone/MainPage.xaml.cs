@@ -31,6 +31,17 @@ namespace MLT_Phone
             if (sometext.Text == "") sometext.Text = "你要先打一些字喵(￣y▽,￣)╭ ";
             meow.Text = 喵.喵喵Encode(sometext.Text);
         }
+
+        private void 喵喵套娃(object sender, EventArgs e)
+        {
+            string cat= 喵.喵喵Encode(sometext.Text);
+            while (cat.Length < 1000)
+            {
+                cat = 喵.喵喵Encode(cat);
+            }
+            meow.Text = cat;
+        }
+
         private void 变成字(object sender, EventArgs e)
         {
             if (meow.Text == "") meow.Text = "?喵!nia?喵呜。!nia？？？?！喵呜~nia!喵！喵!!？喵～nia～喵呜?喵呜？喵呜~喵～喵。喵呜!喵呜~～喵~喵!!nia..喵呜。喵呜～喵呜？喵!?nia。？nia~nia~喵!!nia！nia.喵呜。喵？？!?喵呜!喵~～！!!_(:з」∠)_";
@@ -43,8 +54,6 @@ namespace MLT_Phone
                 sometext.Text = "出现错误！喵喵格式不正确！" + ex.Message;
             }
         }
-
-        
 
         private void 复制字(object sender, EventArgs e)
         {
