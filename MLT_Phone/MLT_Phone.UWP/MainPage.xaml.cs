@@ -1,27 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+﻿using Xamarin.Forms;
+using Windows.System;
+using System;
 
+[assembly: Dependency(typeof(MLT_Phone.UWP.MainPage.Helper))]
 namespace MLT_Phone.UWP
 {
     public sealed partial class MainPage
     {
+        static MainPage instance;
         public MainPage()
         {
-            this.InitializeComponent();
-
+            InitializeComponent();
+            instance = this;
             LoadApplication(new MLT_Phone.App());
         }
+        public void OpenURL(string url) => Launcher.LaunchUriAsync(new Uri(url));
+        public class Helper : IHelper
+        {
+            public void OpenURL(string url) => instance.OpenURL(url);
+        }
     }
+
+
 }

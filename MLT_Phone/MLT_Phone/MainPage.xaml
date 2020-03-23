@@ -30,6 +30,7 @@
             <Button Text="变成套娃喵"
                     Clicked="喵喵套娃"
                     />
+            <BoxView />
             <Button Text="变成字"
                     Clicked="变成字"/>
             
